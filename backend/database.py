@@ -9,7 +9,7 @@ from datetime import datetime
 from contextlib import contextmanager
 
 # SQLAlchemy imports (MySQL)
-from sqlalchemy import create_engine, desc, func
+from sqlalchemy import create_engine, desc, func, text
 from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 
@@ -201,7 +201,7 @@ class Database:
         try:
             if self.db_type in ('mysql', 'sqlite'):
                 with self.get_session() as session:
-                    session.execute('SELECT 1')
+                    session.execute(text('SELECT 1'))
                 return True
             elif self.db_type == 'mongodb':
                 self.mongo_client.admin.command('ping')
