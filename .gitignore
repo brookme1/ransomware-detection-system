@@ -1,0 +1,84 @@
+# ---------------------------------------------------------
+# Global ignores for Ransomware Detection System repository
+# Keeps secrets, local artifacts, and build outputs out of Git
+# ---------------------------------------------------------
+
+# OS / Editor cruft
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*.orig
+
+# Python cache + build
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+.build/
+.python-version
+.pytest_cache/
+.mypy_cache/
+.cache/
+coverage/
+htmlcov/
+*.cover
+*.py,cover
+*.log
+ransomware_detector.log
+
+# Virtual environments
+venv/
+backend/venv/
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Databases & local state
+*.pid
+
+# Uploaded / generated data
+backend/temp_uploads/
+temp_uploads/
+backend/data/**/*.json
+backend/data/**/*.csv
+backend/data/**/*.tmp
+
+# Machine learning artifacts created during experiments
+backend/models/**/*.tmp
+backend/models/**/*.bak
+backend/notebooks/
+
+# Node / frontend artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.eslintcache
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# Build outputs at repo root
+build/
+dist/
+
+# Local tooling
+*.iml
+*.ipr
+*.iws
+*.code-workspace
+
+# Render / deployment temp files
+render.log

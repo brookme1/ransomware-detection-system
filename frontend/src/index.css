@@ -1,0 +1,461 @@
+/* ============================================================
+   Ransomware Detection System - Main Stylesheet
+   ============================================================ */
+
+/* Tailwind CSS Base Imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Base Layer - Global Styles
+   ============================================================ */
+
+@layer base {
+  /* HTML & Body */
+  html {
+    @apply scroll-smooth antialiased;
+  }
+  
+  body {
+    @apply bg-gray-50 dark:bg-dark-950 text-dark-900 dark:text-white;
+    @apply font-sans;
+    @apply min-h-screen;
+  }
+  
+  /* Typography */
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+  
+  h2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+  
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+  
+  h4 {
+    @apply text-xl font-semibold;
+  }
+  
+  h5 {
+    @apply text-lg font-medium;
+  }
+  
+  h6 {
+    @apply text-base font-medium;
+  }
+  
+  p {
+    @apply text-base leading-relaxed;
+  }
+  
+  /* Links */
+  a {
+    @apply text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300;
+    @apply transition-colors duration-200;
+  }
+  
+  /* Focus Styles */
+  *:focus {
+    @apply outline-none;
+  }
+  
+  *:focus-visible {
+    @apply ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-dark-900;
+  }
+  
+  /* Selection */
+  ::selection {
+    @apply bg-primary-500 text-white;
+  }
+  
+  /* Scrollbar Styling (Webkit browsers) */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-dark-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-dark-600 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-dark-500;
+  }
+}
+
+/* ============================================================
+   Components Layer - Reusable Component Styles
+   ============================================================ */
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white;
+    @apply shadow-lg hover:shadow-xl;
+    @apply focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-dark-200 hover:bg-dark-300 dark:bg-dark-700 dark:hover:bg-dark-600;
+    @apply text-dark-900 dark:text-white;
+    @apply focus:ring-dark-500;
+  }
+  
+  .btn-success {
+    @apply bg-success-500 hover:bg-success-600 text-white;
+    @apply shadow-lg hover:shadow-xl;
+    @apply focus:ring-success-500;
+  }
+  
+  .btn-danger {
+    @apply bg-danger-500 hover:bg-danger-600 text-white;
+    @apply shadow-lg hover:shadow-xl;
+    @apply focus:ring-danger-500;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-500 text-primary-600 dark:text-primary-400;
+    @apply hover:bg-primary-50 dark:hover:bg-primary-900/20;
+    @apply focus:ring-primary-500;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-white dark:bg-dark-800;
+    @apply rounded-xl shadow-soft;
+    @apply border border-gray-200 dark:border-dark-700;
+    @apply p-6;
+    @apply transition-all duration-200;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-2.5 rounded-lg;
+    @apply border border-gray-300 dark:border-dark-600;
+    @apply bg-white dark:bg-dark-800;
+    @apply text-dark-900 dark:text-white;
+    @apply placeholder-gray-400 dark:placeholder-dark-500;
+    @apply transition-all duration-200;
+    @apply focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  
+  .input-error {
+    @apply border-danger-500 focus:ring-danger-500;
+  }
+  
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1.5;
+    @apply px-3 py-1 rounded-full;
+    @apply text-sm font-medium;
+    @apply transition-all duration-200;
+  }
+  
+  .badge-success {
+    @apply bg-success-100 text-success-700;
+    @apply dark:bg-success-900/30 dark:text-success-300;
+    @apply border border-success-200 dark:border-success-800;
+  }
+  
+  .badge-danger {
+    @apply bg-danger-100 text-danger-700;
+    @apply dark:bg-danger-900/30 dark:text-danger-300;
+    @apply border border-danger-200 dark:border-danger-800;
+  }
+  
+  .badge-warning {
+    @apply bg-warning-100 text-warning-700;
+    @apply dark:bg-warning-900/30 dark:text-warning-300;
+    @apply border border-warning-200 dark:border-warning-800;
+  }
+  
+  .badge-primary {
+    @apply bg-primary-100 text-primary-700;
+    @apply dark:bg-primary-900/30 dark:text-primary-300;
+    @apply border border-primary-200 dark:border-primary-800;
+  }
+  
+  /* Tables */
+  .table {
+    @apply w-full text-left border-collapse;
+  }
+  
+  .table thead {
+    @apply bg-gray-50 dark:bg-dark-800;
+    @apply border-b-2 border-gray-200 dark:border-dark-700;
+  }
+  
+  .table th {
+    @apply px-6 py-3 text-xs font-semibold uppercase tracking-wider;
+    @apply text-gray-700 dark:text-gray-300;
+  }
+  
+  .table td {
+    @apply px-6 py-4;
+    @apply border-b border-gray-200 dark:border-dark-700;
+  }
+  
+  .table tbody tr {
+    @apply hover:bg-gray-50 dark:hover:bg-dark-800;
+    @apply transition-colors duration-150;
+  }
+  
+  /* Dividers */
+  .divider {
+    @apply border-t border-gray-200 dark:border-dark-700;
+  }
+  
+  /* Loading Spinner */
+  .spinner {
+    @apply inline-block w-8 h-8 border-4 border-gray-200 border-t-primary-500 rounded-full;
+    @apply animate-spin;
+  }
+  
+  .spinner-sm {
+    @apply w-4 h-4 border-2;
+  }
+  
+  .spinner-lg {
+    @apply w-12 h-12 border-4;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    @apply w-full bg-gray-200 dark:bg-dark-700 rounded-full h-2 overflow-hidden;
+  }
+  
+  .progress-bar-fill {
+    @apply bg-primary-500 h-full rounded-full transition-all duration-300;
+  }
+  
+  /* Alerts */
+  .alert {
+    @apply p-4 rounded-lg border;
+    @apply flex items-start gap-3;
+  }
+  
+  .alert-success {
+    @apply bg-success-50 dark:bg-success-900/20;
+    @apply border-success-200 dark:border-success-800;
+    @apply text-success-800 dark:text-success-200;
+  }
+  
+  .alert-danger {
+    @apply bg-danger-50 dark:bg-danger-900/20;
+    @apply border-danger-200 dark:border-danger-800;
+    @apply text-danger-800 dark:text-danger-200;
+  }
+  
+  .alert-warning {
+    @apply bg-warning-50 dark:bg-warning-900/20;
+    @apply border-warning-200 dark:border-warning-800;
+    @apply text-warning-800 dark:text-warning-200;
+  }
+  
+  /* File Upload Zone */
+  .upload-zone {
+    @apply border-2 border-dashed border-gray-300 dark:border-dark-600;
+    @apply rounded-xl p-8;
+    @apply text-center cursor-pointer;
+    @apply transition-all duration-200;
+    @apply hover:border-primary-500 hover:bg-primary-50/50 dark:hover:bg-primary-900/10;
+  }
+  
+  .upload-zone-active {
+    @apply border-primary-500 bg-primary-50 dark:bg-primary-900/20;
+  }
+  
+  /* Modal Overlay */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/50 backdrop-blur-sm;
+    @apply flex items-center justify-center;
+    @apply z-50 p-4;
+  }
+  
+  .modal-content {
+    @apply bg-white dark:bg-dark-800 rounded-xl shadow-2xl;
+    @apply max-w-2xl w-full max-h-[90vh] overflow-y-auto;
+    @apply animate-scale-in;
+  }
+}
+
+/* ============================================================
+   Utilities Layer - Custom Utility Classes
+   ============================================================ */
+
+@layer utilities {
+  /* Text Gradients */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+  }
+  
+  .gradient-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  }
+  
+  .gradient-success {
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  }
+  
+  .gradient-danger {
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  }
+  
+  .gradient-warning {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  }
+  
+  /* Text Shadows */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Glass Effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg;
+    @apply border border-white/20;
+  }
+  
+  /* Glow Effects */
+  .glow-primary {
+    @apply shadow-glow;
+  }
+  
+  .glow-success {
+    @apply shadow-glow-success;
+  }
+  
+  .glow-danger {
+    @apply shadow-glow-danger;
+  }
+  
+  /* Smooth Transitions */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Hide Scrollbar */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Responsive Container */
+  .container-responsive {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* ============================================================
+   Custom Animations
+   ============================================================ */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Pulse Animation for Danger */
+.pulse-danger {
+  animation: pulse-danger 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-danger {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* ============================================================
+   Print Styles
+   ============================================================ */
+
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .card {
+    @apply shadow-none border border-gray-300;
+  }
+}
+
+/* ============================================================
+   Accessibility
+   ============================================================ */
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .card {
+    @apply border-2;
+  }
+  
+  .btn {
+    @apply border-2;
+  }
+}
+
+/* ============================================================
+   End of Stylesheet
+   ============================================================ */

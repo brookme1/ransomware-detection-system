@@ -1,0 +1,119 @@
+# ==================== WEB FRAMEWORK ====================
+# FastAPI - Modern web framework for building APIs
+fastapi==0.104.1
+
+# Uvicorn - ASGI server for FastAPI
+uvicorn[standard]==0.24.0
+
+# Python multipart - File upload support
+python-multipart==0.0.6
+
+
+# ==================== DATABASE ====================
+# SQLAlchemy - SQL toolkit and ORM for MySQL
+SQLAlchemy==2.0.23
+
+# PyMySQL - Pure Python MySQL client
+PyMySQL==1.1.0
+
+# PyMongo - MongoDB driver (optional)
+pymongo==4.6.0
+
+
+# ==================== MACHINE LEARNING ====================
+# Scikit-learn - Machine learning library
+scikit-learn==1.3.2
+
+# NumPy - Numerical computing
+numpy==1.26.2
+
+# Joblib - Model serialization
+joblib==1.3.2
+
+
+# ==================== FILE ANALYSIS ====================
+# PEfile - PE (Portable Executable) file parser
+pefile==2023.2.7
+
+# Python-magic - File type identification (optional)
+python-magic==0.4.27
+
+
+# ==================== SECURITY & VALIDATION ====================
+# Python-dotenv - Environment variable management
+python-dotenv==1.0.0
+
+# Email-validator - Email validation
+email-validator==2.1.0
+
+# Cryptography - Cryptographic recipes
+cryptography==41.0.7
+
+
+# ==================== HTTP CLIENT ====================
+# HTTPX - Async HTTP client for webhook alerts
+httpx==0.25.2
+
+# Requests - HTTP library (alternative)
+requests==2.31.0
+
+
+# ==================== UTILITIES ====================
+# Python-dateutil - Date/time utilities
+python-dateutil==2.8.2
+
+# Typing-extensions - Backported typing features
+typing-extensions==4.9.0
+
+
+# ==================== OPTIONAL DEPENDENCIES ====================
+# Celery - Distributed task queue (for async scanning)
+# celery==5.3.4
+# redis==5.0.1
+
+# Sentry-SDK - Error tracking (production monitoring)
+# sentry-sdk==1.38.0
+
+# Prometheus-client - Metrics collection
+# prometheus-client==0.19.0
+
+
+# ==================== DEVELOPMENT TOOLS ====================
+# Pytest - Testing framework
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Black - Code formatter
+black==23.12.1
+
+# Flake8 - Linting
+flake8==6.1.0
+
+# MyPy - Static type checker
+mypy==1.7.1
+
+
+# ==================== NOTES ====================
+# Installation instructions:
+# 
+# 1. Create virtual environment:
+#    python -m venv venv
+#
+# 2. Activate virtual environment:
+#    - Windows: venv\Scripts\activate
+#    - Linux/Mac: source venv/bin/activate
+#
+# 3. Install dependencies:
+#    pip install -r requirements.txt
+#
+# 4. For production (without dev tools):
+#    pip install -r requirements.txt --no-dev
+#
+# Compatibility:
+# - Python 3.9+
+# - Tested on: Python 3.9, 3.10, 3.11, 3.12
+#
+# Optional components:
+# - Uncomment Celery for async task processing
+# - Uncomment Sentry for error tracking
+# - Uncomment Prometheus for metrics

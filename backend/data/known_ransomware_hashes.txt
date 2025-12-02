@@ -1,0 +1,1 @@
+# Add known ransomware SHA256 hashes here (one per line)
